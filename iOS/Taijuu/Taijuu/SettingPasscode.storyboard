@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GzU-dQ-FkQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--パスコードの設定-->
+        <scene sceneID="OT0-cW-Bob">
+            <objects>
+                <viewController storyboardIdentifier="SettingPasscodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GzU-dQ-FkQ" customClass="SettingPasscodeViewController" customModule="Taijuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ap1-Oj-0Qm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCq-ld-aUo">
+                                <rect key="frame" x="47" y="345.5" width="320" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="ssm-NK-cfG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GzU-dQ-FkQ" id="MQJ-yi-Gf6"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスコードを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOa-Jz-Kag">
+                                <rect key="frame" x="85.5" y="276.5" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yCq-ld-aUo" firstAttribute="centerX" secondItem="Ap1-Oj-0Qm" secondAttribute="centerX" id="8zg-Fz-lQQ"/>
+                            <constraint firstItem="yCq-ld-aUo" firstAttribute="centerY" secondItem="Ap1-Oj-0Qm" secondAttribute="centerY" constant="-64" id="OiT-2s-jue"/>
+                            <constraint firstItem="HOa-Jz-Kag" firstAttribute="centerX" secondItem="Ap1-Oj-0Qm" secondAttribute="centerX" id="Vjy-c9-WMJ"/>
+                            <constraint firstItem="yCq-ld-aUo" firstAttribute="top" secondItem="HOa-Jz-Kag" secondAttribute="bottom" constant="48" id="zhF-Gp-aWj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vv0-12-dyr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="パスコードの設定" id="uQM-ne-R25">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="iTX-qc-fFS">
+                            <connections>
+                                <action selector="saveButtonWasTapped:" destination="GzU-dQ-FkQ" id="kQ5-6n-0Vz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="passcodeTextField" destination="yCq-ld-aUo" id="QUi-2N-mME"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jEw-uX-oIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1424.6376811594205" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+</document>

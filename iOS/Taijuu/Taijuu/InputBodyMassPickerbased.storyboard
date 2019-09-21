@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gFL-80-yCZ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Input Body Mass Pickerbased View Controller-->
+        <scene sceneID="IGp-F5-gif">
+            <objects>
+                <tableViewController storyboardIdentifier="InputBodyMassPickerbasedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yUi-8P-ZYX" customClass="InputBodyMassPickerbasedViewController" customModule="Taijuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="1sa-Dg-gOM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="ywy-9I-qdw">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="240" id="1vQ-Gv-yEK">
+                                        <rect key="frame" x="0.0" y="35" width="414" height="240"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1vQ-Gv-yEK" id="Kjz-Hn-A6G">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="239.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7W-35-SQy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="239.5"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="yUi-8P-ZYX" id="Vd0-kq-61K"/>
+                                                        <outlet property="delegate" destination="yUi-8P-ZYX" id="hJB-iu-lPX"/>
+                                                    </connections>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="S7W-35-SQy" secondAttribute="bottom" id="L7I-zX-QfY"/>
+                                                <constraint firstAttribute="bottom" secondItem="S7W-35-SQy" secondAttribute="bottom" id="OtR-NO-r5R"/>
+                                                <constraint firstAttribute="trailing" secondItem="S7W-35-SQy" secondAttribute="trailing" id="Zbu-O9-Twp"/>
+                                                <constraint firstItem="S7W-35-SQy" firstAttribute="leading" secondItem="Kjz-Hn-A6G" secondAttribute="leading" id="kG8-tD-wCQ"/>
+                                                <constraint firstItem="S7W-35-SQy" firstAttribute="top" secondItem="Kjz-Hn-A6G" secondAttribute="top" id="m8d-wP-KKG"/>
+                                                <constraint firstAttribute="trailing" secondItem="S7W-35-SQy" secondAttribute="trailing" id="mTo-Dl-oz2"/>
+                                                <constraint firstItem="S7W-35-SQy" firstAttribute="top" secondItem="Kjz-Hn-A6G" secondAttribute="top" id="plF-4h-9W4"/>
+                                                <constraint firstItem="S7W-35-SQy" firstAttribute="leading" secondItem="Kjz-Hn-A6G" secondAttribute="leading" id="qNH-P7-ueN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="yUi-8P-ZYX" id="Pdj-fs-5u1"/>
+                            <outlet property="delegate" destination="yUi-8P-ZYX" id="OON-sx-H85"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mAu-JP-xUt">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="oHx-gK-S6R">
+                            <connections>
+                                <action selector="cancelButtonWasTapped:" destination="yUi-8P-ZYX" id="PNK-Mb-Ir0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="VU0-OZ-wOk">
+                            <connections>
+                                <action selector="saveButtonWasTapped:" destination="yUi-8P-ZYX" id="bc5-Sk-q2o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pickerView" destination="S7W-35-SQy" id="TKo-p7-H0J"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ngl-QQ-mKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002.8985507246377" y="-46.205357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wV4-Ce-YHL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gFL-80-yCZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QBn-fQ-ikS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yUi-8P-ZYX" kind="relationship" relationship="rootViewController" id="WUK-sH-Nq7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKt-T5-XGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="-46.205357142857139"/>
+        </scene>
+    </scenes>
+</document>

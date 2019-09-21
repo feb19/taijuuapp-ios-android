@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RUQ-vV-U2a">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--体重を入力-->
+        <scene sceneID="agV-Ig-axD">
+            <objects>
+                <tableViewController storyboardIdentifier="InputBodyMassTextbased" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u7o-tz-TdO" customClass="InputBodyMassTextbasedViewController" customModule="Taijuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="6gi-uN-8uY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Sfc-pZ-2yx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="6qo-SN-dQH">
+                                        <rect key="frame" x="0.0" y="35" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6qo-SN-dQH" id="XQV-sZ-kyu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="体重を入力 (kg)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePa-b9-fcQ">
+                                                    <rect key="frame" x="160" y="0.0" width="254" height="43.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="textFieldEditDidEnd:" destination="u7o-tz-TdO" eventType="editingDidEnd" id="jN6-MP-HEU"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="体重 (kg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-r2-gA5">
+                                                    <rect key="frame" x="20" y="11.5" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ePa-b9-fcQ" firstAttribute="leading" secondItem="XQV-sZ-kyu" secondAttribute="leading" constant="160" id="7A1-EQ-T1C"/>
+                                                <constraint firstItem="ePa-b9-fcQ" firstAttribute="top" secondItem="XQV-sZ-kyu" secondAttribute="top" id="MSB-Yx-e60"/>
+                                                <constraint firstItem="HP9-r2-gA5" firstAttribute="centerY" secondItem="XQV-sZ-kyu" secondAttribute="centerY" id="PRZ-i1-8Y2"/>
+                                                <constraint firstAttribute="trailing" secondItem="ePa-b9-fcQ" secondAttribute="trailing" id="SLu-JD-EU7"/>
+                                                <constraint firstAttribute="bottom" secondItem="ePa-b9-fcQ" secondAttribute="bottom" id="nLC-eq-ezz"/>
+                                                <constraint firstItem="HP9-r2-gA5" firstAttribute="leading" secondItem="XQV-sZ-kyu" secondAttribute="leadingMargin" id="oHj-ln-hy6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="u7o-tz-TdO" id="N96-hc-k78"/>
+                            <outlet property="delegate" destination="u7o-tz-TdO" id="Hre-YN-h8Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="体重を入力" id="b6L-oB-rNR">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="t6g-OY-0Uw">
+                            <connections>
+                                <action selector="cancelButtonWasTapped:" destination="u7o-tz-TdO" id="F58-BY-yIn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="U5k-dM-5UN">
+                            <connections>
+                                <action selector="saveButtonWasTapped:" destination="u7o-tz-TdO" id="fUl-nN-c0v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="U5k-dM-5UN" id="ozN-TS-IpH"/>
+                        <outlet property="weightTextField" destination="ePa-b9-fcQ" id="HcQ-Yp-wHg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chh-qe-woA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218.840579710145" y="166.74107142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bk2-as-XgU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RUQ-vV-U2a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W1E-FU-3AB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u7o-tz-TdO" kind="relationship" relationship="rootViewController" id="hYW-37-YMk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ErZ-jC-uKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308.69565217391306" y="166.74107142857142"/>
+        </scene>
+    </scenes>
+</document>

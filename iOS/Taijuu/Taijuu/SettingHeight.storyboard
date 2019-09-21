@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wXT-Jz-UW5">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--身長の設定-->
+        <scene sceneID="wl2-Re-vra">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingHeightViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wXT-Jz-UW5" customClass="SettingHeightViewController" customModule="Taijuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="HSl-Mq-QhY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Hfw-nt-OVG">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="dEG-AQ-zCR">
+                                        <rect key="frame" x="0.0" y="35" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dEG-AQ-zCR" id="INW-kw-as9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身長(cm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkg-dN-cTv">
+                                                    <rect key="frame" x="20" y="11.5" width="70.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="身長を入力(cm)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TyX-sV-dwt">
+                                                    <rect key="frame" x="160" y="0.0" width="254" height="43.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="wXT-Jz-UW5" id="Hpl-Is-Qfn"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="TyX-sV-dwt" secondAttribute="trailing" id="8Ol-Kd-t9v"/>
+                                                <constraint firstItem="TyX-sV-dwt" firstAttribute="top" secondItem="INW-kw-as9" secondAttribute="top" id="Dv6-gO-Jz3"/>
+                                                <constraint firstItem="hkg-dN-cTv" firstAttribute="leading" secondItem="INW-kw-as9" secondAttribute="leadingMargin" id="Gzm-gb-RX1"/>
+                                                <constraint firstAttribute="bottom" secondItem="TyX-sV-dwt" secondAttribute="bottom" id="Lpc-ud-X0k"/>
+                                                <constraint firstItem="hkg-dN-cTv" firstAttribute="centerY" secondItem="INW-kw-as9" secondAttribute="centerY" id="T76-VT-PUU"/>
+                                                <constraint firstItem="TyX-sV-dwt" firstAttribute="leading" secondItem="INW-kw-as9" secondAttribute="leading" constant="160" id="q0V-rs-Aic"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="wXT-Jz-UW5" id="kO0-to-Fb2"/>
+                            <outlet property="delegate" destination="wXT-Jz-UW5" id="ZVW-CN-cYZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="身長の設定" id="eWl-Dv-vLN">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="MlU-8w-PQR">
+                            <connections>
+                                <action selector="saveButtonWasTapped:" destination="wXT-Jz-UW5" id="Q4y-ce-L2p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="heightTextField" destination="TyX-sV-dwt" id="A11-Tb-bYP"/>
+                        <outlet property="saveButton" destination="MlU-8w-PQR" id="493-81-aKB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEB-JN-Oco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="24.776785714285712"/>
+        </scene>
+    </scenes>
+</document>

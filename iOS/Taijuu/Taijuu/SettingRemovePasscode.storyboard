@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXU-Sp-Xhb">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting Remove Passcode View Controller-->
+        <scene sceneID="gb0-Sc-eJz">
+            <objects>
+                <viewController storyboardIdentifier="SettingRemovePasscodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXU-Sp-Xhb" customClass="SettingRemovePasscodeViewController" customModule="Taijuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A0k-aR-hAR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATc-yN-o4S">
+                                <rect key="frame" x="47" y="345.5" width="320" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="kIK-ZL-ydA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXU-Sp-Xhb" id="R0h-RE-0KW"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスコードを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgB-9I-zVx">
+                                <rect key="frame" x="85.5" y="276.5" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RgB-9I-zVx" firstAttribute="centerX" secondItem="A0k-aR-hAR" secondAttribute="centerX" id="CJc-EL-vww"/>
+                            <constraint firstItem="ATc-yN-o4S" firstAttribute="top" secondItem="RgB-9I-zVx" secondAttribute="bottom" constant="48" id="YFv-vM-KIx"/>
+                            <constraint firstItem="ATc-yN-o4S" firstAttribute="centerX" secondItem="A0k-aR-hAR" secondAttribute="centerX" id="cAM-qQ-49o"/>
+                            <constraint firstItem="ATc-yN-o4S" firstAttribute="centerY" secondItem="A0k-aR-hAR" secondAttribute="centerY" constant="-64" id="lgS-eo-rnA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1X-7J-cSo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6M5-0F-nTH">
+                        <barButtonItem key="rightBarButtonItem" title="削除" id="bQ7-Hx-99e">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="removeButtonWasTapped:" destination="vXU-Sp-Xhb" id="6zz-7V-upx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="captionLabel" destination="RgB-9I-zVx" id="R6j-sP-lDD"/>
+                        <outlet property="passcodeTextField" destination="ATc-yN-o4S" id="AIr-od-7cA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yFh-9m-WXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210.144927536232" y="122.54464285714285"/>
+        </scene>
+    </scenes>
+</document>

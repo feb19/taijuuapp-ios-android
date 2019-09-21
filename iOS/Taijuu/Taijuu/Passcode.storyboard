@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rKL-cK-Mue">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Passcode View Controller-->
+        <scene sceneID="0sp-GG-HBn">
+            <objects>
+                <viewController storyboardIdentifier="PasscodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rKL-cK-Mue" customClass="PasscodeViewController" customModule="Taijuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OrR-ZT-wcX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-mE-e5u">
+                                <rect key="frame" x="47" y="345.5" width="320" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="rDd-VT-SEU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rKL-cK-Mue" id="exn-8w-uCB"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスコードを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsF-HJ-D9i">
+                                <rect key="frame" x="85.5" y="276.5" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yYp-mE-e5u" firstAttribute="top" secondItem="OsF-HJ-D9i" secondAttribute="bottom" constant="48" id="0eI-DT-ZNJ"/>
+                            <constraint firstItem="yYp-mE-e5u" firstAttribute="centerY" secondItem="OrR-ZT-wcX" secondAttribute="centerY" constant="-64" id="Vrf-K1-wvH"/>
+                            <constraint firstItem="yYp-mE-e5u" firstAttribute="centerX" secondItem="OrR-ZT-wcX" secondAttribute="centerX" id="c0q-Ix-ZPR"/>
+                            <constraint firstItem="OsF-HJ-D9i" firstAttribute="centerX" secondItem="OrR-ZT-wcX" secondAttribute="centerX" id="w2Y-y8-zpe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mna-ia-UaK"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionLabel" destination="OsF-HJ-D9i" id="fGl-fz-ZTm"/>
+                        <outlet property="passcodeTextField" destination="yYp-mE-e5u" id="9XU-9X-Ry1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdq-cJ-nCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="149"/>
+        </scene>
+    </scenes>
+</document>
